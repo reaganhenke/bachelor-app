@@ -1,29 +1,21 @@
 export const contestantAttributesMapping = {
-  id: 'ID',
   name: 'Name',
-  email: 'Email Address',
-  contact: {
-    _prefix: 'Contact',
-    street: 'Street',
-    streetNumber: 'Street Number',
-    zip: 'ZIP',
-    city: 'City'
-  },
-  skills: {
-    _prefix: 'Skill',
-    _listField: true
-  }
+  age: 'Age',
+  hometown: 'Hometown',
+  job: 'Job',
+  entrace: 'Entrance',
+  week_elim: 'Week Eliminated',
+  notables: 'Notables',
+  photo_url: 'Photo'
 };
 
 export interface Contestant {
-  id: string;
   name: string;
-  email: string;
-  contact: {
-    street: string;
-    streetNumber: string;
-    zip: string;
-    city: string;
-  };
-  skills: string[];
+  age: number;
+  hometown: string;
+  job: string;
+  entrace: string;
+  week_elim: string;
+  notables: string;
+  photo_url: string;
 }

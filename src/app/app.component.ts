@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { GoogleSheetsDbService } from 'ng-google-sheets-db';
 import { Observable } from 'rxjs';
-import { Contestant, contestantAttributesMapping } from './contestant.model';
-import { environment } from '../environments/environment';
+import { Contestant } from './contestant.model';
+import { Store } from '@ngrx/store';
+import { AppState, contestants, currentWeek } from './state/reducer';
+import { loadContestants } from './state/actions';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +13,14 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = 'bachelor';
   contestants$: Observable<Contestant[]>;
+  currentWeek$: Observable<number>;
 
-
-  constructor(private googleSheetsDbService: GoogleSheetsDbService) {
-    this.contestants$ = this.googleSheetsDbService.get<Contestant>(
-      environment.contestants.spreadsheetId, environment.contestants.worksheetId, contestantAttributesMapping);
-
+  constructor(private store: Store<AppState>) {
+    this.contestants$ = store.select(contestants);
+    this.currentWeek$ = store.select(currentWeek);
   }
 
-
+  ngOnInit() {
+    this.store.dispatch(loadContestants());
+  }
 }

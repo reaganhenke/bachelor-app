@@ -1,10 +1,12 @@
+<header>current week: {{currentWeek$ | async}} </header>
 
 <div class="content" role="main">
-
+  <app-bachelor-card></app-bachelor-card>
+  <app-contestant-card></app-contestant-card>
   <div *ngFor="let contestant of contestants$ | async" class="contestant-card">
     <div class="name">
       {{ contestant.name }}
     </div>
   </div>
 
-<router-outlet></router-outlet>
+<footer>footer</footer>
