@@ -1,3 +1,11 @@
+.card {
+  cursor: pointer;
+}
+
+.selected {
+  outline: 2px red solid;
+}
+
 .img-container {
     position: relative;
 }

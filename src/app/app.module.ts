@@ -18,9 +18,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule }        from '@angular/forms';
+import { DetailModalComponent } from './detail-modal/detail-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, BachelorCardComponent, ContestantCardComponent, WeekDialogComponent],
+  declarations: [AppComponent, BachelorCardComponent, ContestantCardComponent, WeekDialogComponent, DetailModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

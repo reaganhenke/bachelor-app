@@ -1,4 +1,5 @@
-<div class="card" [ngClass]="{'eliminated' : isEliminated}">
+<div class="card" [ngClass]="{'eliminated' : isEliminated, 'selected' : isSelected}" (click)="launchDetailModal()">
+  <!-- idk if the eliminated class is actually being used -->
   <div class="img-container">
     <img alt="{{contestantInfo?.name}} headshot" src="{{contestantInfo?.photo_url}}">
     <div *ngIf="isEliminated" class="eliminated-text">eliminated</div>
