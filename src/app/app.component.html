@@ -1,16 +1,18 @@
 <header>
-  <h1>Who TF Is That, no spoilers</h1>
-
-  current week: {{ currentWeek$ | async }}
-
-  <mat-form-field appearance="fill">
-    <mat-label>Week:</mat-label>
-    <select matNativeControl [formControl]="week">
-      <option *ngFor="let weekIndex of weeks" value="{{ weekIndex }}">
-        {{ weekIndex }}
-      </option>
-    </select>
-  </mat-form-field>
+  <div>
+    <h1>No Spoilers Bachelor</h1>
+    <p>for when you don't know who the f*ck is on screen but you're already behind</p>
+  </div>
+  <div>
+    <label id="week_label">Week: </label>
+    <mat-form-field appearance="outline">
+      <select matNativeControl [formControl]="week" aria-labelledby="week_label" (change)="updateWeek()">
+        <option *ngFor="let weekIndex of weeks" value="{{ weekIndex }}">
+          {{ weekIndex }}
+        </option>
+      </select>
+    </mat-form-field>
+  </div>
 </header>
 
 <div class="content" role="main">

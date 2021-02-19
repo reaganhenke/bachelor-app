@@ -3,7 +3,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Contestant } from './contestant.model';
 import { Store } from '@ngrx/store';
 import { AppState, contestants, currentWeek, error } from './state/reducer';
-import { loadContestants } from './state/actions';
+import { loadContestants, updateWeek } from './state/actions';
 import { MatDialog } from '@angular/material/dialog';
 import { WeekDialogComponent } from './week-dialog/week-dialog.component';
 import { environment } from 'src/environments/environment';
@@ -31,8 +31,12 @@ export class AppComponent implements OnInit, OnDestroy {
     this.error$ = store.select(error);
   }
 
+  updateWeek() {
+    this.store.dispatch(updateWeek({newWeek : this.week.value}));
+  }
+
   ngOnInit() {
-    const dialogRef = this.dialog.open(WeekDialogComponent);
+    // const dialogRef = this.dialog.open(WeekDialogComponent); 
     this.subscriptions.add(this.currentWeek$.subscribe(week => this.week.setValue(week)));
     this.store.dispatch(loadContestants());
   }
