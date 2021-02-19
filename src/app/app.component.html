@@ -1,4 +1,19 @@
-<header><h1>Who TF Is That, no spoilers</h1>current week: {{currentWeek$ | async}} </header>
+<header>
+  <h1>Who TF Is That, no spoilers</h1>
+
+  current week: {{ currentWeek$ | async }}
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Week:</mat-label>
+    <select matNativeControl [formControl]="week">
+      <option *ngFor="let weekIndex of weeks" value="{{ weekIndex }}">
+        {{ weekIndex }}
+      </option>
+    </select>
+  </mat-form-field>
+  
+</header>
 
 <div class="content" role="main">
   <app-bachelor-card></app-bachelor-card>
@@ -9,4 +24,5 @@
     </div>
   </div>
 
-<footer>footer</footer>
+  <footer>footer</footer>
+</div>

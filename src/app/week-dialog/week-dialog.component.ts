@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { updateWeek } from '../state/actions';
 import { AppState } from '../state/reducer';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-week-dialog',
@@ -12,8 +13,7 @@ import { AppState } from '../state/reducer';
 })
 export class WeekDialogComponent {
   week = new FormControl(0);
-  MAX_EPISODE = 7;
-  weeks = [...Array(this.MAX_EPISODE).keys()];
+  weeks = [...Array(environment.max_week).keys()];
 
   constructor(
     public dialogRef: MatDialogRef<WeekDialogComponent>,

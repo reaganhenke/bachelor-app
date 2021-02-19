@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  max_week: 7,
   contestants: {
     spreadsheetId: '1P3EC0_IEVvS5FerbPJ7swBT3S5cy2jFjPCzM3gc4Xmc',
     worksheetId: 1,
