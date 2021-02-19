@@ -1,5 +1,11 @@
 <div class="card" [ngClass]="{'eliminated' : isEliminated}">
-  ELIMINATED? {{isEliminated}}
+  <div class="img-container">
+    <img alt="{{contestantInfo?.name}} headshot" src="{{contestantInfo?.photo_url}}">
+    <div *ngIf="isEliminated" class="eliminated-text">eliminated</div>
+  </div>
   <p>{{contestantInfo?.name}}</p>
-  <p>{{contestantInfo?.week_elim}}</p>
+  <p>{{contestantInfo?.age}}</p>
+  <p>{{contestantInfo?.job}}</p>
+  <p>{{contestantInfo?.hometown}}</p>
+  <p *ngIf="isEliminated">Eliminated in week {{contestantInfo?.week_elim}}</p>
 </div>

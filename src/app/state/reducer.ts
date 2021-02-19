@@ -24,7 +24,24 @@ export const reducer = createReducer(
   initialState,
   on(updateWeek, (state, { newWeek }) => ({
     ...state,
-    currentWeek: newWeek
+    currentWeek: newWeek,
+    contestants: state.contestants.slice().sort((a, b) => 
+    {
+      const isAEliminated = a.week_elim <= newWeek;
+      const isBEliminated = b.week_elim <= newWeek;
+      // Sort eliminated contestants to the end, from most recently eliminated to least.
+      /// Otherwise, sort alphabetically. 
+      if (isAEliminated && !isBEliminated) {
+        return 1;
+      } else if (!isAEliminated && isBEliminated) {
+        return -1;
+      } else if (isAEliminated && isBEliminated && (a.week_elim != b.week_elim)) {
+        return b.week_elim - a.week_elim;
+      }
+      else {
+        return a.name > b.name ? 1 : -1;
+      }
+    })
   })),
   on(loadContestants, (state) => ({
     ...state,
@@ -33,7 +50,7 @@ export const reducer = createReducer(
   on(loadContestantsSuccess, (state, { contestants }) => ({
     ...state,
     loading: false,
-    contestants
+    contestants: contestants.slice().sort((a, b) => a.name > b.name ? 1 : -1) 
   })),
   on(loadContestantsFailure, (state, { error }) => ({
     ...state,

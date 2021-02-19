@@ -1,29 +1,34 @@
-<header>
-  <div>
-    <h1>No Spoilers Bachelor</h1>
-    <p>for when you don't know who the f*ck is on screen but you're already behind</p>
-  </div>
-  <div>
-    <label id="week_label">Week: </label>
-    <mat-form-field appearance="outline">
-      <select matNativeControl [formControl]="week" aria-labelledby="week_label" (change)="updateWeek()">
-        <option *ngFor="let weekIndex of weeks" value="{{ weekIndex }}">
-          {{ weekIndex }}
-        </option>
-      </select>
-    </mat-form-field>
-  </div>
-</header>
+<div class="container">
+  <header>
+    <div>
+      <h1>No Spoilers Bachelor</h1>
+      <p>for when you don't know who the f*ck is on screen but you're already behind</p> 
+      <!-- TODO : add an info popup, explaining there are still some spoilers like when people arrive late, and link to the github -->
+    </div>
+    <div>
+      <label id="week_label">Week: </label>
+      <mat-form-field appearance="outline">
+        <select matNativeControl [formControl]="week" aria-labelledby="week_label" (change)="updateWeek()">
+          <option *ngFor="let weekIndex of weeks" value="{{ weekIndex }}">
+            {{ weekIndex }}
+          </option>
+        </select>
+      </mat-form-field>
+    </div>
+  </header>
 
-<div class="content" role="main">
-  <app-bachelor-card></app-bachelor-card>
-  <hr />
-  <div *ngIf="error$ | async; else showContestants">WHOOPS COULDnT LOAD IT</div>
-  <ng-template #showContestants>
-    <app-contestant-card
-      *ngFor="let contestant of contestants$ | async"
-      [contestantInfo]="contestant"
-    ></app-contestant-card>
-  </ng-template>
-  <footer>this is made by reagan!!!!</footer>
+  <div class="content" role="main">
+    <app-bachelor-card></app-bachelor-card>
+    <hr />
+    <div *ngIf="error$ | async; else showContestants">WHOOPS COULDnT LOAD IT</div>
+    <ng-template #showContestants>
+      <div class="contestant-container">
+        <app-contestant-card
+          *ngFor="let contestant of contestants$ | async"
+          [contestantInfo]="contestant"
+        ></app-contestant-card>
+      </div>
+    </ng-template>
+    <footer>this is made by reagan!!!!</footer>
+  </div>
 </div>

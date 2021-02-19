@@ -15,7 +15,7 @@ export interface Contestant {
   hometown: string;
   job: string;
   entrace: string;
-  week_elim: string;
+  week_elim: number;
   notables: string;
   photo_url: string;
 }
