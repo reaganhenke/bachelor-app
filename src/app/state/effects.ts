@@ -16,9 +16,8 @@ export class Effects {
   loadContestants$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loadContestants),
-      switchMap(() => {
-        console.log('LOADING');
-        return this.googleSheetsDbService
+      switchMap(() => 
+        this.googleSheetsDbService
           .get<Contestant>(
             environment.contestants.spreadsheetId,
             environment.contestants.worksheetId,
@@ -29,8 +28,8 @@ export class Effects {
               loadContestantsSuccess({ contestants })
             ),
             catchError((error) => of(loadContestantsFailure({ error })))
-          );
-      })
+          )
+      )
     )
   );
 

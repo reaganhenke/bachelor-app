@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>What is the <i>most recent</i> episode of the Bachelor you've seen?</h2>
+<mat-dialog-content>
+<form (ngSubmit)="onSubmit($event)">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Week:</mat-label>
+    <select matNativeControl [formControl]="week" >
+      <option *ngFor="let weekIndex of weeks" value="{{weekIndex}}">{{weekIndex}}</option>
+    </select>
+  </mat-form-field>
+
+  Value: {{ week.value }}
+
+  <button type="submit">GO</button>
+
+  
+</form>
+
+
+
+
+</mat-dialog-content>
+
+

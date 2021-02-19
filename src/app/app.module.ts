@@ -11,9 +11,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducer } from './state/reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { Effects } from './state/effects';
+import { WeekDialogComponent } from './week-dialog/week-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule }        from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, BachelorCardComponent, ContestantCardComponent],
+  declarations: [AppComponent, BachelorCardComponent, ContestantCardComponent, WeekDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +28,12 @@ import { Effects } from './state/effects';
     StoreModule.forRoot({ core: reducer }),
     EffectsModule.forRoot([Effects]),
     StoreDevtoolsModule.instrument(),
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [GoogleSheetsDbService],
   bootstrap: [AppComponent],

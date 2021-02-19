@@ -21,7 +21,7 @@ export const reducer = createReducer(
   initialState,
   on(updateWeek, (state, { newWeek }) => ({
     ...state,
-    currentWeek: newWeek,
+    currentWeek: newWeek
   })),
   on(loadContestantsSuccess, (state, { contestants }) => ({
     ...state,
