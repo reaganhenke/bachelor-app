@@ -24,10 +24,16 @@ export class Effects {
             contestantAttributesMapping
           )
           .pipe(
-            map((contestants: Contestant[]) =>
-              loadContestantsSuccess({ contestants })
-            ),
-            catchError((error) => of(loadContestantsFailure({ error })))
+            map((contestants: Contestant[]) => {
+              if (!!contestants) {
+                return loadContestantsSuccess({ contestants })
+              } else {
+                return loadContestantsFailure({ error: 'Failed to load data' })
+              }
+            }),
+            catchError((error) => 
+               of(loadContestantsFailure({ error }))
+            )
           )
       )
     )

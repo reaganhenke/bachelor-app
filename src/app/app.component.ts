@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Contestant } from './contestant.model';
 import { Store } from '@ngrx/store';
-import { AppState, contestants, currentWeek } from './state/reducer';
+import { AppState, contestants, currentWeek, error } from './state/reducer';
 import { loadContestants } from './state/actions';
 import { MatDialog } from '@angular/material/dialog';
 import { WeekDialogComponent } from './week-dialog/week-dialog.component';
@@ -18,6 +18,8 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'bachelor';
   contestants$: Observable<Contestant[]>;
   currentWeek$: Observable<number>;
+  error$: Observable<any>;
+
   subscriptions = new Subscription();
 
   week = new FormControl('');
@@ -26,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private store: Store<AppState>, public dialog: MatDialog) {
     this.contestants$ = store.select(contestants);
     this.currentWeek$ = store.select(currentWeek);
+    this.error$ = store.select(error);
   }
 
   ngOnInit() {

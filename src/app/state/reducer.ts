@@ -1,11 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
 import { Contestant } from '../contestant.model';
-import { loadContestantsSuccess, updateWeek } from './actions';
+import { loadContestants, loadContestantsFailure, loadContestantsSuccess, updateWeek } from './actions';
 
 export interface State {
   contestants: Contestant[];
   currentWeek: number;
-  // TODO: error handling
+  loading: boolean;
+  error: any | null;
 }
 
 export interface AppState {
@@ -15,6 +16,8 @@ export interface AppState {
 export const initialState: State = {
   contestants: [],
   currentWeek: 0,
+  loading: false,
+  error: null
 };
 
 export const reducer = createReducer(
@@ -23,11 +26,22 @@ export const reducer = createReducer(
     ...state,
     currentWeek: newWeek
   })),
+  on(loadContestants, (state) => ({
+    ...state,
+    loading: true
+  })),
   on(loadContestantsSuccess, (state, { contestants }) => ({
     ...state,
-    contestants,
+    loading: false,
+    contestants
+  })),
+  on(loadContestantsFailure, (state, { error }) => ({
+    ...state,
+    loading: false,
+    error: error
   }))
 );
 
 export const currentWeek = (state: AppState) => state.core.currentWeek;
 export const contestants = (state: AppState) => state.core.contestants;
+export const error = (state: AppState) => state.core.error;

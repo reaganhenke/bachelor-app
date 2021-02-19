@@ -9,7 +9,7 @@ export const loadContestantsSuccess = createAction(
 );
 
 export const loadContestantsFailure = createAction(
-  'Load Contestants Success',
+  'Load Contestants Failure',
   props<{ error: any }>()
 );
 

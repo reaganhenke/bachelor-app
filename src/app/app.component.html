@@ -3,7 +3,6 @@
 
   current week: {{ currentWeek$ | async }}
 
-
   <mat-form-field appearance="fill">
     <mat-label>Week:</mat-label>
     <select matNativeControl [formControl]="week">
@@ -12,12 +11,17 @@
       </option>
     </select>
   </mat-form-field>
-
 </header>
 
 <div class="content" role="main">
   <app-bachelor-card></app-bachelor-card>
-  <hr>
-  <app-contestant-card *ngFor="let contestant of contestants$ | async" [contestantInfo]="contestant"></app-contestant-card>
+  <hr />
+  <div *ngIf="error$ | async; else showContestants">WHOOPS COULDnT LOAD IT</div>
+  <ng-template #showContestants>
+    <app-contestant-card
+      *ngFor="let contestant of contestants$ | async"
+      [contestantInfo]="contestant"
+    ></app-contestant-card>
+  </ng-template>
   <footer>this is made by reagan!!!!</footer>
 </div>
