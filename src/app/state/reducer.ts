@@ -1,6 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 import { Contestant } from '../contestant.model';
-import { loadContestants, loadContestantsFailure, loadContestantsSuccess, updateWeek } from './actions';
+import {
+  loadContestants,
+  loadContestantsFailure,
+  loadContestantsSuccess,
+  updateWeek
+} from './actions';
 
 export interface State {
   contestants: Contestant[];
@@ -25,20 +30,18 @@ export const reducer = createReducer(
   on(updateWeek, (state, { newWeek }) => ({
     ...state,
     currentWeek: newWeek,
-    contestants: state.contestants.slice().sort((a, b) => 
-    {
-      const isAEliminated = a.week_elim <= newWeek;
-      const isBEliminated = b.week_elim <= newWeek;
+    contestants: state.contestants.slice().sort((a, b) => {
+      const isAEliminated = a.week_elim && a.week_elim <= newWeek;
+      const isBEliminated = b.week_elim && b.week_elim <= newWeek;
       // Sort eliminated contestants to the end, from most recently eliminated to least.
-      /// Otherwise, sort alphabetically. 
+      /// Otherwise, sort alphabetically.
       if (isAEliminated && !isBEliminated) {
         return 1;
       } else if (!isAEliminated && isBEliminated) {
         return -1;
       } else if (isAEliminated && isBEliminated && (a.week_elim != b.week_elim)) {
         return b.week_elim - a.week_elim;
-      }
-      else {
+      } else {
         return a.name > b.name ? 1 : -1;
       }
     })

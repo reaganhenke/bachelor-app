@@ -27,7 +27,7 @@ export class ContestantCardComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.currentWeek$.subscribe(
         (week) =>
-          (this.isEliminated = Number(this.contestantInfo?.week_elim) <= week)
+          (this.isEliminated = this.contestantInfo.week_elim ? Number(this.contestantInfo.week_elim) <= week : false)
       )
     );
   }
