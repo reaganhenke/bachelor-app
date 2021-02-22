@@ -1,5 +1,10 @@
 .card {
   cursor: pointer;
+  position: relative;
+  margin: 1rem;
+  width: 12rem;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .selected {
@@ -7,12 +12,39 @@
 }
 
 .img-container {
-    position: relative;
+  position: relative;
+  img {
+    width: 100%;
+  }
 }
 
 .eliminated-text {
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: red;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.eliminated img {
+  filter: grayscale(1) brightness(0.5);
+}
+
+.info-holder {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;  
+  p {
+    margin: 0.25rem;
+  }
+  transition: all 0.2s;
+}
+
+.card:hover .info-holder, .selected .info-holder {
+  padding: 1rem;
 }

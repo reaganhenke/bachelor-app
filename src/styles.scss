@@ -1,5 +1,10 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 body, html {
   height: 100%;
+  margin: 0;
+  background-color: #33030C;
+  font-family: 'Source Sans Pro', sans-serif;;
 }

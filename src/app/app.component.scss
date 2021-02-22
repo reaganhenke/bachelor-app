@@ -1,10 +1,71 @@
 header {
   display: flex;
+  flex-direction: column;
+  background-image: url("../assets/rosesblur.png");
+  background-size: cover;
+  background-position: 10%;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  h1 {
+    margin: 1rem 1rem -1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: normal;
+    font-size: 4rem;
+  }
+  .bachelor {
+    width: 16rem;
+    margin: 1rem 2rem 0 0;
+  }
+}
+
+.bar {
+  padding: 0rem 1rem;
+  background-color: rgba(169, 35, 35, 1);
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  button {
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0 !important;
+    padding: 0;
+    width: 6rem;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline{
+    color: rgba(255,255,255,1);
+    padding: 0.5rem 0 0.5rem 0;
+  }
+
+  .mat-form-field-type-mat-native-select .mat-form-field-infix::after {
+    border-top-color: white !important;
+  }
 }
 
 .contestant-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container {
@@ -12,4 +73,16 @@ header {
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+}
+
+footer {
+  padding: 1rem;
+  background-color: rgba(169, 35, 35, 1);
+  text-align: center;
+  color: white;
+  font-size: 0.825rem;
+  margin-top: 2rem;
+  a {
+    color: white;
+  }
 }

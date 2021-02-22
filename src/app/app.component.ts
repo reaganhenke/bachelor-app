@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { WeekDialogComponent } from './week-dialog/week-dialog.component';
 import { environment } from 'src/environments/environment';
 import { FormControl } from '@angular/forms';
+import { MoreInfoComponent } from './more-info/more-info.component';
 
 @Component({
   selector: 'app-root',
@@ -39,6 +40,10 @@ export class AppComponent implements OnInit, OnDestroy {
     // const dialogRef = this.dialog.open(WeekDialogComponent); 
     this.subscriptions.add(this.currentWeek$.subscribe(week => this.week.setValue(week)));
     this.store.dispatch(loadContestants());
+  }
+
+  showMoreInfo() {
+    const dialogRef = this.dialog.open(MoreInfoComponent); 
   }
 
   ngOnDestroy() {
