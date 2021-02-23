@@ -9,6 +9,7 @@ import { Contestant } from '../contestant.model';
 export class DetailModalComponent implements OnInit {
 
   @Input() contestantInfo!: Contestant;
+  @Input() isEliminated!: boolean;
 
 
   constructor() { }

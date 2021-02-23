@@ -75,8 +75,11 @@ header {
   justify-content: space-between;
 }
 
+.content {
+  padding: 1rem 0;
+}
+
 footer {
-  padding: 1rem;
   background-color: rgba(169, 35, 35, 1);
   text-align: center;
   color: white;

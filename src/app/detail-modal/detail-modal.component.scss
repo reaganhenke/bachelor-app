@@ -1,0 +1,30 @@
+::ng-deep .mat-dialog-container {
+  position: relative;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+img {
+  margin-right: 2rem;
+}

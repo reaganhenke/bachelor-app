@@ -33,8 +33,11 @@ export class ContestantCardComponent implements OnInit, OnDestroy {
   }
 
   launchDetailModal() {
-    const dialogRef = this.dialog.open(DetailModalComponent);
+    const dialogRef = this.dialog.open(DetailModalComponent, {
+      autoFocus: false
+    });
     dialogRef.componentInstance.contestantInfo = this.contestantInfo; 
+    dialogRef.componentInstance.isEliminated = this.isEliminated; 
     this.isSelected = true;
     dialogRef.afterClosed().subscribe(result => this.isSelected = false)
   }
