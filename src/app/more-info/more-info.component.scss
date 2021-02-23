@@ -1,0 +1,21 @@
+::ng-deep .mat-dialog-container {
+  position: relative;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  margin: 0.75rem;
+}

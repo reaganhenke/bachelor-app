@@ -11,7 +11,7 @@ header {
   display: flex;
   justify-content: flex-end;
   h1 {
-    margin: 0.5rem 1rem;
+    margin: 0.5rem 3rem;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -32,16 +32,15 @@ header {
   }
   .bachelor {
     width: 16rem;
-    margin: 1rem 2rem 0 0;
+    margin: 1rem 3rem 0 0;
   }
 }
 
 .bar {
-  padding: 0rem 1rem;
   background-color: rgba(169, 35, 35, 1);
   display: flex;
   color: white;
-  justify-content: space-between;
+  justify-content: space-around;
   button {
     display: inline;
     background: none;

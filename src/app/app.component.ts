@@ -43,7 +43,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   showMoreInfo() {
-    const dialogRef = this.dialog.open(MoreInfoComponent); 
+    const dialogRef = this.dialog.open(MoreInfoComponent, { autoFocus: false }); 
   }
 
   ngOnDestroy() {
