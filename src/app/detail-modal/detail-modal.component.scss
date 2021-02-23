@@ -22,3 +22,14 @@ button {
 img {
   margin-right: 2rem;
 }
+
+@media only screen and (max-width: 780px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  img {
+    width: 70%;
+    margin: 0;
+  }
+}

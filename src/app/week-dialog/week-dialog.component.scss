@@ -26,3 +26,10 @@ button {
 mat-form-field {
   width: 9rem !important;
 }
+
+@media only screen and (max-width: 375px) {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
