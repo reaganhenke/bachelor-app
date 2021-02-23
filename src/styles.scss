@@ -1,14 +1,14 @@
-// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Dancing+Script&display=swap');
 @import '~@angular/material/theming';
 @include mat-core();
 
-$bachelor-primary: mat-palette($mat-red, 800);
-$bachelor-accent: mat-palette($mat-pink, A200, A100, A400);
+$bachelor-primary: mat-palette($mat-gray, 900);
+$bachelor-accent: mat-palette($mat-red, 800);
 $bachelor-theme: mat-light-theme($bachelor-primary, $bachelor-accent);
 
 @include angular-material-theme($bachelor-theme);
+
+$muted-red: #aa2323;
 
 body, html {
   height: 100%;

@@ -1,3 +1,5 @@
+@import "/src/styles.scss";
+
 form {
   display: flex;
   justify-content: space-around;
@@ -5,11 +7,22 @@ form {
   margin: 1.5rem 0;
 }
 
-h2, p {
+h2,
+p {
   text-align: center;
+}
+
+.mat-red {
+  background-color: $muted-red;
+  color: white;
 }
 
 button {
   height: 3rem;
+  width: 6rem;
   margin-bottom: 1.34375em;
+}
+
+mat-form-field {
+  width: 9rem !important;
 }

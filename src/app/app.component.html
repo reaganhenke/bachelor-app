@@ -9,12 +9,11 @@
     </div>
     <div class="bar">
       <p>
-        when you don't know who the f*ck is on screen but you're already behind.
-        <button mat-button (click)="showMoreInfo()">more info.</button>
+        When you don't know who the f*ck is on screen but you're already behind.
       </p>
       <div>
-        <label id="week_label">Week: </label>
-        <mat-form-field appearance="outline">
+        <label id="week_label">Week</label>
+        <mat-form-field appearance="standard">
           <select
             matNativeControl
             [formControl]="week"
@@ -26,6 +25,9 @@
             </option>
           </select>
         </mat-form-field>
+        <button mat-flat-button color="dark" (click)="showMoreInfo()">
+          About
+        </button>
       </div>
     </div>
   </header>
@@ -44,8 +46,8 @@
     </ng-template>
   </div>
   <footer>
-    i'm reagan and i made this, you can see more of my projects on my
+    You can see more of my projects on my
     <a href="https://www.instagram.com/ifthencreate/">instagram</a> or
-    <a href="https://github.com/reaganhenke/">github</a>
+    <a href="https://github.com/reaganhenke/">github</a>.
   </footer>
 </div>

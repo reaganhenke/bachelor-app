@@ -1,7 +1,7 @@
 <h2>
   Most Recent Episode?
 </h2>
-<p>What's the most recent episode you've seen? <br> We won't show you anyone eliminated after that point.</p>
+<p>What's the most recent episode you've seen? <br> We won't show you any spoilers after that point.</p>
 <mat-dialog-content>
   <form (ngSubmit)="onSubmit($event)">
     <mat-form-field appearance="fill">
@@ -12,6 +12,6 @@
         </option>
       </select>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Go</button>
+    <button mat-raised-button color="red" type="submit">Go</button>
   </form>
 </mat-dialog-content>
