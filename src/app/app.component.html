@@ -1,16 +1,26 @@
 <div class="container">
   <header>
     <div class="banner">
-      <h1><span>the</span><br><span>BACHELOR</span><span> (no spoilers)</span></h1>
+      <h1>
+        <span>the</span><br /><span>BACHELOR</span><span> (no spoilers)</span>
+      </h1>
 
-      <img class="bachelor" alt="Matt James" src="assets/mattjames.png">
+      <img class="bachelor" alt="Matt James" src="assets/mattjames.png" />
     </div>
     <div class="bar">
-      <p>when you don't know who the f*ck is on screen but you're already behind. <button (click)="showMoreInfo()">more info.</button></p> 
+      <p>
+        when you don't know who the f*ck is on screen but you're already behind.
+        <button (click)="showMoreInfo()">more info.</button>
+      </p>
       <div>
         <label id="week_label">Week: </label>
         <mat-form-field appearance="outline">
-          <select matNativeControl [formControl]="week" aria-labelledby="week_label" (change)="updateWeek()">
+          <select
+            matNativeControl
+            [formControl]="week"
+            aria-labelledby="week_label"
+            (change)="updateWeek()"
+          >
             <option *ngFor="let weekIndex of weeks" value="{{ weekIndex }}">
               {{ weekIndex }}
             </option>
@@ -21,7 +31,9 @@
   </header>
 
   <div class="content" role="main">
-    <div *ngIf="error$ | async; else showContestants">WHOOPS COULDnT LOAD IT</div>
+    <div *ngIf="error$ | async; else showContestants">
+      WHOOPS COULDnT LOAD IT
+    </div>
     <ng-template #showContestants>
       <div class="contestant-container">
         <app-contestant-card
@@ -32,6 +44,8 @@
     </ng-template>
   </div>
   <footer>
-    i'm reagan and i made this, you can see more of my projects on my <a href="https://www.instagram.com/ifthencreate/">instagram</a> or <a href="https://github.com/reaganhenke/">github</a>
+    i'm reagan and i made this, you can see more of my projects on my
+    <a href="https://www.instagram.com/ifthencreate/">instagram</a> or
+    <a href="https://github.com/reaganhenke/">github</a>
   </footer>
 </div>

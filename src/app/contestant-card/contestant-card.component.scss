@@ -38,13 +38,14 @@
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
   box-sizing: border-box;
-  padding: 0.5rem 1rem;  
+  padding: 0.5rem 1rem;
   p {
     margin: 0.25rem;
   }
   transition: all 0.2s;
 }
 
-.card:hover .info-holder, .selected .info-holder {
+.card:hover .info-holder,
+.selected .info-holder {
   padding: 1rem;
 }

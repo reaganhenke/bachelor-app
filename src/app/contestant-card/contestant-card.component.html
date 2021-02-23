@@ -1,12 +1,22 @@
-<div class="card" [ngClass]="{'eliminated' : isEliminated, 'selected' : isSelected}" (click)="launchDetailModal()">
+<div
+  class="card"
+  [ngClass]="{ eliminated: isEliminated, selected: isSelected }"
+  (click)="launchDetailModal()"
+>
   <div class="img-container">
-    <img alt="{{contestantInfo.name}}" src="{{contestantInfo.photo_url}}" onerror="this.onerror=null;this.src='../../assets/roses.jpg';">
+    <img
+      alt="{{ contestantInfo.name }}"
+      src="{{ contestantInfo.photo_url }}"
+      onerror="this.onerror=null;this.src='../../assets/roses.jpg';"
+    />
     <div *ngIf="isEliminated" class="eliminated-text">eliminated</div>
   </div>
   <div class="info-holder">
-    <p>{{contestantInfo?.name}}, {{contestantInfo?.age}}</p>
-    <p>{{contestantInfo?.job}}</p>
-    <p>{{contestantInfo?.hometown}}</p>
-    <p *ngIf="isEliminated">Eliminated in week {{contestantInfo?.week_elim}}</p>
+    <p>{{ contestantInfo?.name }}, {{ contestantInfo?.age }}</p>
+    <p>{{ contestantInfo?.job }}</p>
+    <p>{{ contestantInfo?.hometown }}</p>
+    <p *ngIf="isEliminated">
+      Eliminated in week {{ contestantInfo?.week_elim }}
+    </p>
   </div>
 </div>

@@ -27,19 +27,21 @@ export class ContestantCardComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.currentWeek$.subscribe(
         (week) =>
-          (this.isEliminated = this.contestantInfo.week_elim ? Number(this.contestantInfo.week_elim) <= week : false)
+          (this.isEliminated = this.contestantInfo.week_elim
+            ? Number(this.contestantInfo.week_elim) <= week
+            : false)
       )
     );
   }
 
   launchDetailModal() {
     const dialogRef = this.dialog.open(DetailModalComponent, {
-      autoFocus: false
+      autoFocus: false,
     });
-    dialogRef.componentInstance.contestantInfo = this.contestantInfo; 
-    dialogRef.componentInstance.isEliminated = this.isEliminated; 
+    dialogRef.componentInstance.contestantInfo = this.contestantInfo;
+    dialogRef.componentInstance.isEliminated = this.isEliminated;
     this.isSelected = true;
-    dialogRef.afterClosed().subscribe(result => this.isSelected = false)
+    dialogRef.afterClosed().subscribe((result) => (this.isSelected = false));
   }
 
   ngOnDestroy() {

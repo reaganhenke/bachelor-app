@@ -11,8 +11,8 @@
     </p>
 
     <p>
-      Her entrance was {{ contestantInfo.entrance }}. She's also notable for
-      these things: {{ contestantInfo.notables }}.
+      <span *ngIf="contestantInfo.entrance">{{ contestantInfo.entrance }}</span>
+      {{ contestantInfo.notables }}.
     </p>
 
     <p *ngIf="isEliminated">

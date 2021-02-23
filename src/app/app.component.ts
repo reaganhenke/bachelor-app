@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // const dialogRef = this.dialog.open(WeekDialogComponent); 
+    const dialogRef = this.dialog.open(WeekDialogComponent); 
     this.subscriptions.add(this.currentWeek$.subscribe(week => this.week.setValue(week)));
     this.store.dispatch(loadContestants());
   }
