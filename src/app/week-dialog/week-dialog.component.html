@@ -1,5 +1,5 @@
-<h2 mat-dialog-title>
-  What is the <i>most recent</i> episode of the Bachelor you've seen?
+<h2>
+  What's the most recent episode you've seen?
 </h2>
 <mat-dialog-content>
   <form (ngSubmit)="onSubmit($event)">
@@ -11,9 +11,6 @@
         </option>
       </select>
     </mat-form-field>
-
-    Value: {{ week.value }}
-
-    <button type="submit">GO</button>
+    <button mat-raised-button color="primary" type="submit">Go</button>
   </form>
 </mat-dialog-content>

@@ -16,12 +16,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule }        from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { DetailModalComponent } from './detail-modal/detail-modal.component';
 import { MoreInfoComponent } from './more-info/more-info.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [AppComponent, ContestantCardComponent, WeekDialogComponent, DetailModalComponent, MoreInfoComponent],
+  declarations: [
+    AppComponent,
+    ContestantCardComponent,
+    WeekDialogComponent,
+    DetailModalComponent,
+    MoreInfoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,7 +41,8 @@ import { MoreInfoComponent } from './more-info/more-info.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [GoogleSheetsDbService],
   bootstrap: [AppComponent],

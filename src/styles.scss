@@ -1,11 +1,25 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import '~@angular/material/theming';
+@include mat-core();
 
+$bachelor-primary: mat-palette($mat-red, 800);
+$bachelor-accent: mat-palette($mat-pink, A200, A100, A400);
+$bachelor-theme: mat-light-theme($bachelor-primary, $bachelor-accent);
+
+@include angular-material-theme($bachelor-theme);
 
 body, html {
   height: 100%;
   margin: 0;
   background-color: #33030C;
   font-family: 'Source Sans Pro', sans-serif;;
+}
+
+h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
 }
