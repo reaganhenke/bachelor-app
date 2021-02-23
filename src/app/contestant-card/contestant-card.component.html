@@ -6,7 +6,7 @@
   <div class="img-container">
     <img
       alt="{{ contestantInfo.name }}"
-      src="{{ contestantInfo.photo_url }}"
+      src="../../assets/contestants/{{ contestantInfo.photo_url }}.jpg"
       onerror="this.onerror=null;this.src='../../assets/roses.jpg';"
     />
     <div *ngIf="isEliminated" class="eliminated-text">eliminated</div>
