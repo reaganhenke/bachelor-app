@@ -11,15 +11,24 @@ header {
   display: flex;
   justify-content: flex-end;
   h1 {
-    margin: 1rem 1rem -1rem;
+    margin: 0.5rem 1rem;
     position: absolute;
     bottom: 0;
     left: 0;
     color: white;
-    font-family: 'Great Vibes', cursive;
-    font-family: 'Abril Fatface', cursive;
+    font-family: "Dancing Script", cursive;
     font-weight: normal;
     font-size: 4rem;
+    line-height: 4rem;
+
+    span:nth-of-type(2) {
+      font-family: "Helvetica", sans-serif;
+      font-weight: bold;
+      font-size: 6rem;
+    }
+    span:nth-of-type(3) {
+      font-size: 3rem;
+    }
   }
   .bachelor {
     width: 16rem;
@@ -52,8 +61,8 @@ header {
     width: 6rem;
   }
 
-  .mat-form-field-appearance-outline .mat-form-field-outline{
-    color: rgba(255,255,255,1);
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgba(255, 255, 255, 1);
     padding: 0.5rem 0 0.5rem 0;
   }
 
@@ -85,6 +94,7 @@ footer {
   color: white;
   font-size: 0.825rem;
   margin-top: 2rem;
+  padding: 1rem;
   a {
     color: white;
   }
