@@ -1,7 +1,8 @@
 <button mat-button mat-dialog-close>x</button>
 <div class="container">
-  <img alt="{{ contestantInfo.name }}" src="../../assets/contestants/{{ contestantInfo.photo_url }}.jpg" width="300px"/>
-
+  <div class="cropped">
+    <img alt="{{ contestantInfo.name }}" src="../../assets/contestants/{{ contestantInfo.photo_url }}.jpg" width="300px"/>
+  </div>
   <div>
     <h2>{{ contestantInfo.name }}</h2>
     <p>
