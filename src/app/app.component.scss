@@ -1,5 +1,3 @@
-@import "/src/styles.scss";
-
 header {
   display: flex;
   flex-direction: column;
@@ -45,7 +43,7 @@ button {
 }
 
 .bar {
-  background-color: $muted-red;
+  background-color: var(--muted-red);
   display: flex;
   color: white;
   justify-content: space-around;
@@ -89,7 +87,7 @@ mat-form-field {
 }
 
 footer {
-  background-color: $muted-red;
+  background-color: var(--muted-red);
   text-align: center;
   color: white;
   font-size: 0.825rem;
