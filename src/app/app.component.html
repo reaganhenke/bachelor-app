@@ -33,8 +33,8 @@
   </header>
 
   <div class="content" role="main">
-    <div *ngIf="error$ | async; else showContestants">
-      WHOOPS COULDnT LOAD IT
+    <div *ngIf="error$ | async; else showContestants" class="error">
+      ...uh oh. Looks like there's an issue connecting to the database. Try again later?
     </div>
     <ng-template #showContestants>
       <div class="contestant-container">

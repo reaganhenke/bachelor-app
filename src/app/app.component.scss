@@ -90,6 +90,11 @@ mat-form-field {
   padding: 2rem 1rem;
 }
 
+.error {
+  color: rgba(white, 0.9);
+  text-align: center;
+}
+
 footer {
   background-color: var(--muted-red);
   text-align: center;
