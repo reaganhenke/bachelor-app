@@ -42,6 +42,10 @@ button {
   }
 }
 
+.nospoilers-break {
+  display: none;
+}
+
 .bar {
   background-color: var(--muted-red);
   display: flex;
@@ -106,6 +110,10 @@ footer {
   .bar p {
     display: none;
   }
+
+  .nospoilers-break {
+    display: inline-block;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -143,8 +151,15 @@ footer {
       line-height: 3rem;
     }
     .bachelor {
-      width: 12rem;
+      width: 166px;
+      height: 166px;
       margin: 1rem 1rem 0 0;
     }
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .banner h1 {
+    line-height: 2rem;
   }
 }
